@@ -4,15 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
     <title>Chorder</title>
 </head>
 
 <body>
-    <div id="input"></div>
-    <div>
-        <button type="submit" onclick="generateChordProgression('A','minor')">Generate</button>
+    <div class="wrapper">
+        <div class="container">
+            <div id="input">
+                <select name="root" id="root">
+                    <option value="A">A</option>
+                    <option value="A#/Bb">A#/Bb</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="C#/Db">C#/Db</option>
+                    <option value="D">D</option>
+                    <option value="D#/Eb">D#/Eb</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="F#/Gb">F#/Gb</option>
+                    <option value="G">G</option>
+                    <option value="G#/Ab">G#/Ab</option>
+                </select>
+                <select name="scale" id="scale">
+                    <option value="minor-melodic">minor melodic</option>
+                    <option value="minor-harmonic">minor harmonic</option>
+                    <option value="major">major</option>
+                </select>
+            </div>
+            <div class="wrapper">
+                <div>
+                    <button type="submit" onclick="generateChordProgression()">Generate</button>
+                </div>
+            </div>
+            <div id="output"></div>
+        </div>
     </div>
-    <div id="output"></div>
 </body>
 <script src="generateChordProgression.js"></script>
 

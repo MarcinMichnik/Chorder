@@ -1,0 +1,8 @@
+.wrapper {
+    display:flex;
+    justify-content: center;
+}
+.container {
+    border-style: solid;
+    padding: 5px;
+}
