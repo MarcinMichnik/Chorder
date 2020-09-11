@@ -117,7 +117,58 @@ const getUsableNotesInAScale = (root, scale) => {
             return usableNotes;
         }
     } else if (scale==="major") {
-        
+        let usableNotes;
+        switch(root) {
+            case "A": 
+                usableNotes = ["A","B","C#/Db","D","E","F#/Gb","G#/Ab",
+                               "A","B","C#/Db","D","E","F#/Gb","G#/Ab"];
+                break;
+            case "A#/Bb":
+                usableNotes = ["A#/Bb","C","D","D#/Eb","F","G","A",
+                               "A#/Bb","C","D","D#/Eb","F","G","A"];
+                break;
+            case "B": 
+                usableNotes = ["B","C#/Db","D#/Eb","E","F#/Gb","G#/Ab","A#/Bb",
+                               "B","C#/Db","D#/Eb","E","F#/Gb","G#/Ab","A#/Bb"];
+                break;
+            case "C": 
+                usableNotes = ["C","D","E","F","G","A","B",
+                               "C","D","E","F","G","A","B"];
+                break;
+            case "C#/Db": 
+                usableNotes = ["C#/Db","D#/Eb","F","F#/Gb","G#/Ab","A#/Bb","C",
+                               "C#/Db","D#/Eb","F","F#/Gb","G#/Ab","A#/Bb","C"];
+                break;
+            case "D": 
+                usableNotes = ["D","E","F#/Gb","G","A","B","C#/Db",
+                               "D","E","F#/Gb","G","A","B","C#/Db"];
+                break;
+            case "D#/Eb": 
+                usableNotes = ["D#/Eb","F","G","G#/Ab","A#/Bb","C","D",
+                               "D#/Eb","F","G","G#/Ab","A#/Bb","C","D"];
+                break;
+            case "E": 
+                usableNotes = ["E","F#/Gb","G#/Ab","A","B","C#/Db","D#/Eb",
+                               "E","F#/Gb","G#/Ab","A","B","C#/Db","D#/Eb"];
+                break;
+            case "F": 
+                usableNotes = ["F","G","A","A#/Bb","C","D","E",
+                               "F","G","A","A#/Bb","C","D","E"];
+                break;
+            case "F#/Gb": 
+                usableNotes = ["F#/Gb","G#/Ab","A#/Bb","B","C#/Db","D#/Eb","F",
+                               "F#/Gb","G#/Ab","A#/Bb","B","C#/Db","D#/Eb","F"];
+                break;
+            case "G": 
+                usableNotes = ["G","A","B","C","D","E","F#/Gb",
+                               "G","A","B","C","D","E","F#/Gb"];
+                break;
+            case "G#/Ab": 
+                usableNotes = ["G#/Ab","A#/Bb","C","C#/Db","D#/Eb","F","G",
+                               "G#/Ab","A#/Bb","C","C#/Db","D#/Eb","F","G"];
+                break;                        
+        }
+        return usableNotes;
     }
 }
 const generateTriad = (usableNotes, scaleName) => {
@@ -139,40 +190,884 @@ const generateTriad = (usableNotes, scaleName) => {
 
     // Attach a chord name to a triad (for example 'Am' as in 'A minor' or 'C' as in 'C major')
     let chordName = "";
-    if (scaleName==="Aminor-melodic") {
-        if (firstElement==="A") {
-            chordName = "Am";
-        } else if (firstElement==="B") {
-            chordName = "Bm";
-        } else if (firstElement==="C") {
-            chordName = "C";
-        } else if (firstElement==="D") {
-            chordName = "Dm";
-        } else if (firstElement==="E") {
-            chordName = "Em";
-        } else if (firstElement==="F") {
-            chordName = "F";
-        } else if (firstElement==="G") {
-            chordName = "G";
-        }
-    }   else if (scaleName==="Dminor-melodic") {
-        if (firstElement==="D") {
-            chordName = "Dm";
-        } else if (firstElement==="E") {
-            chordName = "Em";
-        } else if (firstElement==="F") {
-            chordName = "F";
-        } else if (firstElement==="G") {
-            chordName = "Gm";
-        } else if (firstElement==="A") {
-            chordName = "Am";
-        } else if (firstElement==="A#/Bb") {
-            chordName = "A#/Bb";
-        } else if (firstElement==="C") {
-            chordName = "C";
-        }
-    }
 
+    if (1) {
+        if (scaleName==="Aminor-melodic") {
+            switch(firstElement) {
+                case "A":
+                    chordName = "Am";
+                    break;
+                case "B":
+                    chordName = "Bm";
+                    break;
+                case "C":
+                    chordName = "C";
+                    break;
+                case "D":
+                    chordName = "Dm";
+                    break;
+                case "E":
+                    chordName = "Em";
+                    break;
+                case "F":
+                    chordName = "F";
+                    break;
+                case "G":
+                    chordName = "G";
+                    break;
+            }
+        }   else if (scaleName==="A#/Bbminor-melodic") {
+            switch(firstElement) {
+                case "A#/Bb":
+                    chordName = "A#/Bbm";
+                    break;
+                case "C":
+                    chordName = "Cm";
+                    break;
+                case "C#/Db":
+                    chordName = "C#/Db";
+                    break;
+                case "D#/Eb":
+                    chordName = "D#/Ebm";
+                    break;
+                case "F":
+                    chordName = "Fm";
+                    break;
+                case "F#/Gb":
+                    chordName = "F#/Gb";
+                    break;
+                case "G#/Ab":
+                    chordName = "G#/Ab";
+                    break;
+            }
+        }   else if (scaleName==="Bminor-melodic") {
+            switch(firstElement) {
+                case "B": 
+                    chordName = "Bm";
+                    break;
+                case "C#/Db":  
+                    chordName = "C#/Dbm";
+                    break;
+                case "D": 
+                    chordName = "D";
+                    break;
+                case "E": 
+                    chordName = "Em";
+                    break;
+                case "F#/Gb":
+                    chordName = "F#/Gbm";
+                    break;
+                case "G": 
+                    chordName = "G";
+                    break;
+                case "A": 
+                    chordName = "A";
+                    break;
+            }   
+        }   else if (scaleName==="Cminor-melodic") {
+            switch(firstElement) {
+                case "C": 
+                    chordName = "Cm";
+                    break;
+                case "D": 
+                    chordName = "Dm";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Eb";
+                    break;
+                case "F":  
+                    chordName = "Fm";
+                    break;
+                case "G":  
+                    chordName = "Gm";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Ab";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bb";
+                    break;
+        }   
+        }   else if (scaleName==="C#/Dbminor-melodic") {
+            switch(firstElement) {
+                case "C#/Db": 
+                    chordName = "C#/Dbm";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Ebm";
+                    break;
+                case "E":  
+                    chordName = "E";
+                    break;
+                case "F#/Gb": 
+                    chordName = "F#/Gbm";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
+                    break;
+                case "A": 
+                    chordName = "A";
+                    break;
+                case "B": 
+                    chordName = "B";
+                    break;
+        }
+        }   else if (scaleName==="Dminor-melodic") {
+            switch(firstElement) {
+                case "D": 
+                    chordName = "Dm";
+                    break;
+                case "E": 
+                    chordName = "Em";
+                    break;
+                case "F": 
+                    chordName = "F";
+                    break;
+                case "G": 
+                    chordName = "Gm";
+                    break;
+                case "A": 
+                    chordName = "Am";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bb";
+                    break;
+                case "C": 
+                    chordName = "C";
+                    break;
+        }
+        }   else if (scaleName==="D#/Ebminor-melodic") {
+            switch(firstElement) {
+                case "D#/Eb": 
+                    chordName = "D#/Ebm";
+                    break;
+                case "F": 
+                    chordName = "Fm";
+                    break;
+                case "F#/Gb": 
+                    chordName = "F#/Gb";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bbm";
+                    break;
+                case "B": 
+                    chordName = "B";
+                    break;
+                case "C#/Db": 
+                    chordName = "C#/Db";
+                    break;
+        }
+        }   else if (scaleName==="Eminor-melodic") {
+            switch(firstElement) {
+                case "E": 
+                    chordName = "Em";
+                    break;
+                case "F#/Gb": 
+                    chordName = "F#/Gbm";
+                    break;
+                case "G": 
+                    chordName = "G";
+                    break;
+                case "A": 
+                    chordName = "Am";
+                    break;
+                case "B": 
+                    chordName = "Bm";
+                    break;
+                case "C": 
+                    chordName = "C";
+                    break;
+                case "D": 
+                    chordName = "D";
+                    break;
+        }
+    }       else if (scaleName==="Fminor-melodic") {
+            switch(firstElement) {
+                case "F": 
+                    chordName = "Fm";
+                    break;
+                case "G": 
+                    chordName = "Gm";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Ab";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bbm";
+                    break;
+                case "C": 
+                    chordName = "Cm";
+                    break;
+                case "C#/Db": 
+                    chordName = "C#/Db";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Eb";
+                    break;
+        }
+    }       else if (scaleName==="F#/Gbminor-melodic") {
+            switch(firstElement) {
+                case "F#/Gb": 
+                    chordName = "F#/Gbm";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
+                    break;
+                case "A": 
+                    chordName = "A";
+                    break;
+                case "B": 
+                    chordName = "Bm";
+                    break;
+                case "C#/Db": 
+                    chordName = "C#/Dbm";
+                    break;
+                case "D": 
+                    chordName = "D";
+                    break;
+                case "E": 
+                    chordName = "E";
+                    break;
+        }
+    }       else if (scaleName==="Gminor-melodic") {
+            switch(firstElement) {
+                case "G": 
+                    chordName = "Gm";
+                    break;
+                case "A": 
+                    chordName = "Am";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bb";
+                    break;
+                case "C": 
+                    chordName = "Cm";
+                    break;
+                case "D": 
+                    chordName = "Dm";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Eb";
+                    break;
+                case "F": 
+                    chordName = "F";
+                    break;
+        }
+    }       else if (scaleName==="G#/Abminor-melodic") {
+            switch(firstElement) {
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bbm";
+                    break;
+                case "B": 
+                    chordName = "B";
+                    break;
+                case "C#/Db": 
+                    chordName = "C#/Dbm";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Ebm";
+                    break;
+                case "E": 
+                    chordName = "E";
+                    break;
+                case "F#/Gb": 
+                    chordName = "F#/Gb";
+                    break;
+        }
+    
+    }
+    }
+    if (1) {
+        if (scaleName==="Aminor-harmonic") {
+            switch(firstElement) {
+                case "A":
+                    chordName = "Am";
+                    break;
+                case "B":
+                    chordName = "Bm";
+                    break;
+                case "C":
+                    chordName = "C";
+                    break;
+                case "D":
+                    chordName = "Dm";
+                    break;
+                case "E":
+                    chordName = "Em";
+                    break;
+                case "F":
+                    chordName = "F";
+                    break;
+                case "G#/Ab":
+                    chordName = "G#/Ab";
+                    break;
+            }
+        }   else if (scaleName==="A#/Bbminor-harmonic") {
+            switch(firstElement) {
+                case "A#/Bb":
+                    chordName = "A#/Bbm";
+                    break;
+                case "C":
+                    chordName = "Cm";
+                    break;
+                case "C#/Db":
+                    chordName = "C#/Db";
+                    break;
+                case "D#/Eb":
+                    chordName = "D#/Ebm";
+                    break;
+                case "F":
+                    chordName = "Fm";
+                    break;
+                case "F#/Gb":
+                    chordName = "F#/Gb";
+                    break;
+                case "A":
+                    chordName = "A";
+                    break;
+            }
+        }   else if (scaleName==="Bminor-harmonic") {
+            switch(firstElement) {
+                case "B": 
+                    chordName = "Bm";
+                    break;
+                case "C#/Db":  
+                    chordName = "C#/Dbm";
+                    break;
+                case "D": 
+                    chordName = "D";
+                    break;
+                case "E": 
+                    chordName = "Em";
+                    break;
+                case "F#/Gb":
+                    chordName = "F#/Gbm";
+                    break;
+                case "G": 
+                    chordName = "G";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bb";
+                    break;
+            }   
+        }   else if (scaleName==="Cminor-harmonic") {
+            switch(firstElement) {
+                case "C": 
+                    chordName = "Cm";
+                    break;
+                case "D": 
+                    chordName = "Dm";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Eb";
+                    break;
+                case "F":  
+                    chordName = "Fm";
+                    break;
+                case "G":  
+                    chordName = "Gm";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Ab";
+                    break;
+                case "B": 
+                    chordName = "B";
+                    break;
+        }   
+        }   else if (scaleName==="C#/Dbminor-harmonic") {
+            switch(firstElement) {
+                case "C#/Db": 
+                    chordName = "C#/Dbm";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Ebm";
+                    break;
+                case "E":  
+                    chordName = "E";
+                    break;
+                case "F#/Gb": 
+                    chordName = "F#/Gbm";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
+                    break;
+                case "A": 
+                    chordName = "A";
+                    break;
+                case "C": 
+                    chordName = "C";
+                    break;
+        }
+        }   else if (scaleName==="Dminor-harmonic") {
+            switch(firstElement) {
+                case "D": 
+                    chordName = "Dm";
+                    break;
+                case "E": 
+                    chordName = "Em";
+                    break;
+                case "F": 
+                    chordName = "F";
+                    break;
+                case "G": 
+                    chordName = "Gm";
+                    break;
+                case "A": 
+                    chordName = "Am";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bb";
+                    break;
+                case "C#/Db": 
+                    chordName = "C#/Db";
+                    break;
+        }
+        }   else if (scaleName==="D#/Ebminor-harmonic") {
+            switch(firstElement) {
+                case "D#/Eb": 
+                    chordName = "D#/Ebm";
+                    break;
+                case "F": 
+                    chordName = "Fm";
+                    break;
+                case "F#/Gb": 
+                    chordName = "F#/Gb";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bbm";
+                    break;
+                case "B": 
+                    chordName = "B";
+                    break;
+                case "D": 
+                    chordName = "D";
+                    break;
+        }
+        }   else if (scaleName==="Eminor-harmonic") {
+            switch(firstElement) {
+                case "E": 
+                    chordName = "Em";
+                    break;
+                case "F#/Gb": 
+                    chordName = "F#/Gbm";
+                    break;
+                case "G": 
+                    chordName = "G";
+                    break;
+                case "A": 
+                    chordName = "Am";
+                    break;
+                case "B": 
+                    chordName = "Bm";
+                    break;
+                case "C": 
+                    chordName = "C";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Eb";
+                    break;
+        }
+    }       else if (scaleName==="Fminor-harmonic") {
+            switch(firstElement) {
+                case "F": 
+                    chordName = "Fm";
+                    break;
+                case "G": 
+                    chordName = "Gm";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Ab";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bbm";
+                    break;
+                case "C": 
+                    chordName = "Cm";
+                    break;
+                case "C#/Db": 
+                    chordName = "C#/Db";
+                    break;
+                case "E": 
+                    chordName = "E";
+                    break;
+        }
+    }       else if (scaleName==="F#/Gbminor-harmonic") {
+            switch(firstElement) {
+                case "F#/Gb": 
+                    chordName = "F#/Gbm";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
+                    break;
+                case "A": 
+                    chordName = "A";
+                    break;
+                case "B": 
+                    chordName = "Bm";
+                    break;
+                case "C#/Db": 
+                    chordName = "C#/Dbm";
+                    break;
+                case "D": 
+                    chordName = "D";
+                    break;
+                case "F": 
+                    chordName = "F";
+                    break;
+        }
+    }       else if (scaleName==="Gminor-harmonic") {
+            switch(firstElement) {
+                case "G": 
+                    chordName = "Gm";
+                    break;
+                case "A": 
+                    chordName = "Am";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bb";
+                    break;
+                case "C": 
+                    chordName = "Cm";
+                    break;
+                case "D": 
+                    chordName = "Dm";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Eb";
+                    break;
+                case "F#/Gb": 
+                    chordName = "F#/Gb";
+                    break;
+        }
+    }       else if (scaleName==="G#/Abminor-harmonic") {
+            switch(firstElement) {
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bbm";
+                    break;
+                case "B": 
+                    chordName = "B";
+                    break;
+                case "C#/Db": 
+                    chordName = "C#/Dbm";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Ebm";
+                    break;
+                case "E": 
+                    chordName = "E";
+                    break;
+                case "G": 
+                    chordName = "G";
+                    break;
+        }
+    
+    }
+    }
+    if (1) {
+        if (scaleName==="Amajor") {
+            switch(firstElement) {
+                case "A":
+                    chordName = "A";
+                    break;
+                case "B":
+                    chordName = "Bm";
+                    break;
+                case "C#/Db":
+                    chordName = "C#/Dbm";
+                    break;
+                case "D":
+                    chordName = "D";
+                    break;
+                case "E":
+                    chordName = "E";
+                    break;
+                case "F#/Gb":
+                    chordName = "F#/Gbm";
+                    break;
+                case "G#/Ab":
+                    chordName = "G#/Abm";
+                    break;
+            }
+        }   else if (scaleName==="A#/Bbmajor") {
+            switch(firstElement) {
+                case "A#/Bb":
+                    chordName = "A#/Bb";
+                    break;
+                case "C":
+                    chordName = "Cm";
+                    break;
+                case "D":
+                    chordName = "Dm";
+                    break;
+                case "D#/Eb":
+                    chordName = "D#/Eb";
+                    break;
+                case "F":
+                    chordName = "F";
+                    break;
+                case "G":
+                    chordName = "Gm";
+                    break;
+                case "A":
+                    chordName = "Am";
+                    break;
+            }
+        }   else if (scaleName==="Bmajor") {
+            switch(firstElement) {
+                case "B": 
+                    chordName = "Bm";
+                    break;
+                case "C#/Db":  
+                    chordName = "C#/Dbm";
+                    break;
+                case "D": 
+                    chordName = "D";
+                    break;
+                case "E": 
+                    chordName = "Em";
+                    break;
+                case "F#/Gb":
+                    chordName = "F#/Gbm";
+                    break;
+                case "G": 
+                    chordName = "G";
+                    break;
+                case "A": 
+                    chordName = "A";
+                    break;
+            }   
+        }   else if (scaleName==="Cmajor") {
+            switch(firstElement) {
+                case "C": 
+                    chordName = "Cm";
+                    break;
+                case "D": 
+                    chordName = "Dm";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Eb";
+                    break;
+                case "F":  
+                    chordName = "Fm";
+                    break;
+                case "G":  
+                    chordName = "Gm";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Ab";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bb";
+                    break;
+        }   
+        }   else if (scaleName==="C#/Dbmajor") {
+            switch(firstElement) {
+                case "C#/Db": 
+                    chordName = "C#/Dbm";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Ebm";
+                    break;
+                case "E":  
+                    chordName = "E";
+                    break;
+                case "F#/Gb": 
+                    chordName = "F#/Gbm";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
+                    break;
+                case "A": 
+                    chordName = "A";
+                    break;
+                case "B": 
+                    chordName = "B";
+                    break;
+        }
+        }   else if (scaleName==="Dmajor") {
+            switch(firstElement) {
+                case "D": 
+                    chordName = "Dm";
+                    break;
+                case "E": 
+                    chordName = "Em";
+                    break;
+                case "F": 
+                    chordName = "F";
+                    break;
+                case "G": 
+                    chordName = "Gm";
+                    break;
+                case "A": 
+                    chordName = "Am";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bb";
+                    break;
+                case "C": 
+                    chordName = "C";
+                    break;
+        }
+        }   else if (scaleName==="D#/Ebmajor") {
+            switch(firstElement) {
+                case "D#/Eb": 
+                    chordName = "D#/Ebm";
+                    break;
+                case "F": 
+                    chordName = "Fm";
+                    break;
+                case "F#/Gb": 
+                    chordName = "F#/Gb";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bbm";
+                    break;
+                case "B": 
+                    chordName = "B";
+                    break;
+                case "C#/Db": 
+                    chordName = "C#/Db";
+                    break;
+        }
+        }   else if (scaleName==="Emajor") {
+            switch(firstElement) {
+                case "E": 
+                    chordName = "Em";
+                    break;
+                case "F#/Gb": 
+                    chordName = "F#/Gbm";
+                    break;
+                case "G": 
+                    chordName = "G";
+                    break;
+                case "A": 
+                    chordName = "Am";
+                    break;
+                case "B": 
+                    chordName = "Bm";
+                    break;
+                case "C": 
+                    chordName = "C";
+                    break;
+                case "D": 
+                    chordName = "D";
+                    break;
+        }
+    }       else if (scaleName==="Fmajor") {
+            switch(firstElement) {
+                case "F": 
+                    chordName = "Fm";
+                    break;
+                case "G": 
+                    chordName = "Gm";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Ab";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bbm";
+                    break;
+                case "C": 
+                    chordName = "Cm";
+                    break;
+                case "C#/Db": 
+                    chordName = "C#/Db";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Eb";
+                    break;
+        }
+    }       else if (scaleName==="F#/Gbmajor") {
+            switch(firstElement) {
+                case "F#/Gb": 
+                    chordName = "F#/Gbm";
+                    break;
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
+                    break;
+                case "A": 
+                    chordName = "A";
+                    break;
+                case "B": 
+                    chordName = "Bm";
+                    break;
+                case "C#/Db": 
+                    chordName = "C#/Dbm";
+                    break;
+                case "D": 
+                    chordName = "D";
+                    break;
+                case "E": 
+                    chordName = "E";
+                    break;
+        }
+    }       else if (scaleName==="Gmajor") {
+            switch(firstElement) {
+                case "G": 
+                    chordName = "Gm";
+                    break;
+                case "A": 
+                    chordName = "Am";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bb";
+                    break;
+                case "C": 
+                    chordName = "Cm";
+                    break;
+                case "D": 
+                    chordName = "Dm";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Eb";
+                    break;
+                case "F": 
+                    chordName = "F";
+                    break;
+        }
+    }       else if (scaleName==="G#/Abmajor") {
+            switch(firstElement) {
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
+                    break;
+                case "A#/Bb": 
+                    chordName = "A#/Bbm";
+                    break;
+                case "B": 
+                    chordName = "B";
+                    break;
+                case "C#/Db": 
+                    chordName = "C#/Dbm";
+                    break;
+                case "D#/Eb": 
+                    chordName = "D#/Ebm";
+                    break;
+                case "E": 
+                    chordName = "E";
+                    break;
+                case "F#/Gb": 
+                    chordName = "F#/Gb";
+                    break;
+        }
+    
+    }
+    }
+    
     const triadElement = document.createTextNode(`${listOfElements[0]},
     ${listOfElements[1]},
     ${listOfElements[2]}
