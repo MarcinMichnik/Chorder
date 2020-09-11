@@ -17,104 +17,108 @@ const getUsableNotesInAScale = (root, scale) => {
     // A general algorythm needed. This below is placeholder data.
 
     if (scale==="minor-melodic") {
-        if (root==="A") {
-            let usableNotes = ["A","B","C","D","E","F","G",
-                                "A","B","C","D","E","F","G"];
-            return usableNotes;
-        } else if (root==="A#/Bb") {
-            let usableNotes = ["A#/Bb","C","C#/Db","D#/Eb","F","F#/Gb","G#/Ab",
-                               "A#/Bb","C","C#/Db","D#/Eb","F","F#/Gb","G#/Ab"];
-            return usableNotes;
-        } else if (root==="B") {
-            let usableNotes = ["B","C#/Db","D","E","F#/Gb","G","A",
-                               "B","C#/Db","D","E","F#/Gb","G","A"];
-            return usableNotes;
-        } else if (root==="C") {
-            let usableNotes = ["C","D","D#/Eb","F","G","G#/Ab","A#/Bb",
-                               "C","D","D#/Eb","F","G","G#/Ab","A#/Bb"];
-            return usableNotes;
-        } else if (root==="C#/Db") {
-            let usableNotes = ["C#/Db","D#/Eb","E","F#/Gb","G#/Ab","A","B",
-                               "C#/Db","D#/Eb","E","F#/Gb","G#/Ab","A","B"];
-            return usableNotes;
-        } else if (root==="D") {
-            let usableNotes = ["D","E","F","G","A","A#/Bb","C",
-                                "D","E","F","G","A","A#/Bb","C"];
-            return usableNotes;
-        } else if (root==="D#/Eb") {
-            let usableNotes = ["D#/Eb","F","F#/Gb","G#/Ab","A#/Bb","B","C#/Db",
-                               "D#/Eb","F","F#/Gb","G#/Ab","A#/Bb","B","C#/Db"];
-            return usableNotes;
-        } else if (root==="E") {
-            let usableNotes = ["E","F#/Gb","G","A","B","C","D",
-                               "E","F#/Gb","G","A","B","C","D"];
-            return usableNotes;
-        } else if (root==="F") {
-            let usableNotes = ["F","G","G#/Ab","A#/Bb","C","C#/Db","D#/Eb",
-                               "F","G","G#/Ab","A#/Bb","C","C#/Db","D#/Eb"];
-            return usableNotes;
-        } else if (root==="F#/Gb") {
-            let usableNotes = ["F#/Gb","G#/Ab","A","B","C#/Db","D","E",
-                               "F#/Gb","G#/Ab","A","B","C#/Db","D","E"];
-            return usableNotes;
-        } else if (root==="G") {
-            let usableNotes = ["G","A","A#/Bb","C","D","D#/Eb","F",
-                               "G","A","A#/Bb","C","D","D#/Eb","F"];
-            return usableNotes;
-        } else if (root==="G#/Ab") {
-            let usableNotes = ["G#/Ab","A#/Bb","B","C#/Db","D#/Eb","E","F#/Gb",
-                               "G#/Ab","A#/Bb","B","C#/Db","D#/Eb","E","F#/Gb"];
-            return usableNotes;
+        let usableNotes;
+        switch(root) {
+            case "A":
+                usableNotes = ["A","B","C","D","E","F","G",
+                                   "A","B","C","D","E","F","G"];
+                return usableNotes;
+            case "A#/Bb":
+                usableNotes = ["A#/Bb","C","C#/Db","D#/Eb","F","F#/Gb","G#/Ab",
+                                   "A#/Bb","C","C#/Db","D#/Eb","F","F#/Gb","G#/Ab"];
+                return usableNotes;
+            case "B":
+                usableNotes = ["B","C#/Db","D","E","F#/Gb","G","A",
+                                   "B","C#/Db","D","E","F#/Gb","G","A"];
+                return usableNotes;
+            case "C":
+                usableNotes = ["C","D","D#/Eb","F","G","G#/Ab","A#/Bb",
+                                   "C","D","D#/Eb","F","G","G#/Ab","A#/Bb"];
+                return usableNotes;
+            case "C#/Db":
+                usableNotes = ["C#/Db","D#/Eb","E","F#/Gb","G#/Ab","A","B",
+                                   "C#/Db","D#/Eb","E","F#/Gb","G#/Ab","A","B"];
+                return usableNotes;
+            case "D":
+                usableNotes = ["D","E","F","G","A","A#/Bb","C",
+                                   "D","E","F","G","A","A#/Bb","C"];
+                return usableNotes;
+            case "D#/Eb":
+                usableNotes = ["D#/Eb","F","F#/Gb","G#/Ab","A#/Bb","B","C#/Db",
+                                   "D#/Eb","F","F#/Gb","G#/Ab","A#/Bb","B","C#/Db"];
+                return usableNotes;
+            case "E":
+                usableNotes = ["E","F#/Gb","G","A","B","C","D",
+                                   "E","F#/Gb","G","A","B","C","D"];
+                return usableNotes;
+            case "F":
+                usableNotes = ["F","G","G#/Ab","A#/Bb","C","C#/Db","D#/Eb",
+                                   "F","G","G#/Ab","A#/Bb","C","C#/Db","D#/Eb"];
+                return usableNotes;
+            case "F#/Gb":
+                usableNotes = ["F#/Gb","G#/Ab","A","B","C#/Db","D","E",
+                                   "F#/Gb","G#/Ab","A","B","C#/Db","D","E"];
+                return usableNotes;
+            case "G":
+                usableNotes = ["G","A","A#/Bb","C","D","D#/Eb","F",
+                                   "G","A","A#/Bb","C","D","D#/Eb","F"];
+                return usableNotes;
+            case "G#/Ab":
+                usableNotes = ["G#/Ab","A#/Bb","B","C#/Db","D#/Eb","E","F#/Gb",
+                                   "G#/Ab","A#/Bb","B","C#/Db","D#/Eb","E","F#/Gb"];
+                return usableNotes;
         }
     } else if (scale==="minor-harmonic") {
-        if (root==="A") {
-            let usableNotes = ["A","B","C","D","E","F","G#/Ab",
-                                "A","B","C","D","E","F","G#/Ab"];
-            return usableNotes;
-        } else if (root==="A#/Bb") {
-            let usableNotes = ["A#/Bb","C","C#/Db","D#/Eb","F","F#/Gb","A",
+        let usableNotes;
+        switch(root) {
+            case "A":
+                usableNotes = ["A","B","C","D","E","F","G#/Ab",
+                                   "A","B","C","D","E","F","G#/Ab"];
+                return usableNotes;
+            case "A#/Bb":
+                usableNotes = ["A#/Bb","C","C#/Db","D#/Eb","F","F#/Gb","A",
                                "A#/Bb","C","C#/Db","D#/Eb","F","F#/Gb","A"];
-            return usableNotes;
-        } else if (root==="B") {
-            let usableNotes = ["B","C#/Db","D","E","F#/Gb","G","A#/Bb",
+                return usableNotes;
+            case "B":
+                usableNotes = ["B","C#/Db","D","E","F#/Gb","G","A#/Bb",
                                "B","C#/Db","D","E","F#/Gb","G","A#/Bb"];
-            return usableNotes;
-        } else if (root==="C") {
-            let usableNotes = ["C","D","D#/Eb","F","G","G#/Ab","B",
+                return usableNotes;
+            case "C":
+                usableNotes = ["C","D","D#/Eb","F","G","G#/Ab","B",
                                "C","D","D#/Eb","F","G","G#/Ab","B"];
-            return usableNotes;
-        } else if (root==="C#/Db") {
-            let usableNotes = ["C#/Db","D#/Eb","E","F#/Gb","G#/Ab","A","C",
+                return usableNotes;
+            case "C#/Db":
+                usableNotes = ["C#/Db","D#/Eb","E","F#/Gb","G#/Ab","A","C",
                                "C#/Db","D#/Eb","E","F#/Gb","G#/Ab","A","C"];
-            return usableNotes;
-        } else if (root==="D") {
-            let usableNotes = ["D","E","F","G","A","A#/Bb","C#/Db",
-                                "D","E","F","G","A","A#/Bb","C#/Db"];
-            return usableNotes;
-        } else if (root==="D#/Eb") {
-            let usableNotes = ["D#/Eb","F","F#/Gb","G#/Ab","A#/Bb","B","D",
+                return usableNotes;
+            case "D":
+                usableNotes = ["D","E","F","G","A","A#/Bb","C#/Db",
+                               "D","E","F","G","A","A#/Bb","C#/Db"];
+                return usableNotes;
+            case "D#/Eb":
+                usableNotes = ["D#/Eb","F","F#/Gb","G#/Ab","A#/Bb","B","D",
                                "D#/Eb","F","F#/Gb","G#/Ab","A#/Bb","B","D"];
-            return usableNotes;
-        } else if (root==="E") {
-            let usableNotes = ["E","F#/Gb","G","A","B","C","D#/Eb",
+                return usableNotes;
+            case "E":
+                usableNotes = ["E","F#/Gb","G","A","B","C","D#/Eb",
                                "E","F#/Gb","G","A","B","C","D#/Eb"];
-            return usableNotes;
-        } else if (root==="F") {
-            let usableNotes = ["F","G","G#/Ab","A#/Bb","C","C#/Db","E",
+                return usableNotes;
+            case "F":
+                usableNotes = ["F","G","G#/Ab","A#/Bb","C","C#/Db","E",
                                "F","G","G#/Ab","A#/Bb","C","C#/Db","E"];
-            return usableNotes;
-        } else if (root==="F#/Gb") {
-            let usableNotes = ["F#/Gb","G#/Ab","A","B","C#/Db","D","F",
+                return usableNotes;
+            case "F#/Gb":
+                usableNotes = ["F#/Gb","G#/Ab","A","B","C#/Db","D","F",
                                "F#/Gb","G#/Ab","A","B","C#/Db","D","F"];
-            return usableNotes;
-        } else if (root==="G") {
-            let usableNotes = ["G","A","A#/Bb","C","D","D#/Eb","F#/Gb",
+                return usableNotes;
+            case "G":
+                usableNotes = ["G","A","A#/Bb","C","D","D#/Eb","F#/Gb",
                                "G","A","A#/Bb","C","D","D#/Eb","F#/Gb"];
-            return usableNotes;
-        } else if (root==="G#/Ab") {
-            let usableNotes = ["G#/Ab","A#/Bb","B","C#/Db","D#/Eb","E","G",
+                return usableNotes;
+            case "G#/Ab":
+                usableNotes = ["G#/Ab","A#/Bb","B","C#/Db","D#/Eb","E","G",
                                "G#/Ab","A#/Bb","B","C#/Db","D#/Eb","E","G"];
-            return usableNotes;
+                return usableNotes;
         }
     } else if (scale==="major") {
         let usableNotes;
@@ -827,25 +831,25 @@ const generateTriad = (usableNotes, scaleName) => {
         }   else if (scaleName==="Bmajor") {
             switch(firstElement) {
                 case "B": 
-                    chordName = "Bm";
+                    chordName = "B";
                     break;
                 case "C#/Db":  
                     chordName = "C#/Dbm";
                     break;
-                case "D": 
-                    chordName = "D";
+                case "D#/Eb": 
+                    chordName = "D#/Ebm";
                     break;
                 case "E": 
-                    chordName = "Em";
+                    chordName = "E";
                     break;
                 case "F#/Gb":
-                    chordName = "F#/Gbm";
+                    chordName = "F#/Gb";
                     break;
-                case "G": 
-                    chordName = "G";
+                case "G#/Ab": 
+                    chordName = "G#/Abm";
                     break;
-                case "A": 
-                    chordName = "A";
+                case "A#/Bb": 
+                    chordName = "A#/Bbm";
                     break;
             }   
         }   else if (scaleName==="Cmajor") {
